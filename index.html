@@ -1,1 +1,1126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Aída Alonso | Psicóloga Clínica no Rio de Janeiro</title>
+  <meta name="description" content="Atendimento psicológico para crianças, adolescentes e adultos. Atendimento presencial no Flamengo, Rio de Janeiro, e online.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --fundo: #fffaf5;
+      --fundo-claro: #fffdf9;
+      --texto: #25262a;
+      --texto-suave: #626269;
+
+      --coral: #df7967;
+      --coral-claro: #f3c2b7;
+
+      --azul: #83a9c1;
+      --azul-claro: #dbeaf2;
+
+      --amarelo: #e9bd62;
+      --amarelo-claro: #f7e6b7;
+
+      --verde: #93a78e;
+      --lilas: #b7a5c8;
+
+      --largura: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      line-height: 1.08;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(90%, var(--largura));
+      margin: 0 auto;
+    }
+
+    /* CABEÇALHO */
+
+    header {
+      position: relative;
+      z-index: 20;
+      background: rgba(255, 250, 245, 0.94);
+      border-bottom: 1px solid rgba(0,0,0,.05);
+    }
+
+    nav {
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+    }
+
+    .marca {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .marca strong {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      letter-spacing: .04em;
+      font-weight: 500;
+    }
+
+    .marca span {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .28em;
+      margin-top: 8px;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      font-size: 14px;
+    }
+
+    .menu a:not(.botao-menu) {
+      transition: opacity .2s;
+    }
+
+    .menu a:not(.botao-menu):hover {
+      opacity: .55;
+    }
+
+    .botao-menu {
+      background: var(--coral);
+      color: white;
+      padding: 13px 23px;
+      border-radius: 50px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 600;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-conteudo {
+      position: relative;
+      z-index: 4;
+      width: 52%;
+      padding: 90px 0 105px;
+    }
+
+    .sobretitulo {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      color: #686870;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 5.7vw, 78px);
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      max-width: 570px;
+      font-size: 18px;
+      color: var(--texto-suave);
+      margin-bottom: 35px;
+    }
+
+    .acoes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .botao {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 25px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      transition: transform .2s, opacity .2s;
+    }
+
+    .botao:hover {
+      transform: translateY(-2px);
+    }
+
+    .botao-principal {
+      background: var(--coral);
+      color: white;
+    }
+
+    .botao-secundario {
+      border: 1px solid #aaa5a0;
+      background: rgba(255,255,255,.35);
+    }
+
+    .hero-foto {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 47%;
+      height: 100%;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,.2)),
+        var(--azul-claro);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .foto-placeholder {
+      text-align: center;
+      max-width: 280px;
+      color: #60717b;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    .forma {
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .forma-1 {
+      width: 330px;
+      height: 240px;
+      background: var(--amarelo);
+      border-radius: 58% 42% 64% 36% / 45% 60% 40% 55%;
+      right: 32%;
+      top: -100px;
+      transform: rotate(20deg);
+      opacity: .8;
+    }
+
+    .forma-2 {
+      width: 270px;
+      height: 200px;
+      background: var(--coral-claro);
+      border-radius: 63% 37% 38% 62% / 52% 44% 56% 48%;
+      left: -110px;
+      bottom: -105px;
+      transform: rotate(-12deg);
+    }
+
+    .forma-3 {
+      width: 180px;
+      height: 130px;
+      background: var(--azul);
+      border-radius: 50% 50% 65% 35% / 60% 40% 60% 40%;
+      left: 39%;
+      bottom: -75px;
+      opacity: .65;
+    }
+
+    /* ATENDIMENTOS */
+
+    section {
+      position: relative;
+    }
+
+    .atendimentos {
+      padding: 115px 0 120px;
+      background: var(--fundo-claro);
+    }
+
+    .titulo-central {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 75px;
+    }
+
+    .titulo-central h2 {
+      font-size: clamp(38px, 4vw, 57px);
+      margin-bottom: 18px;
+    }
+
+    .titulo-central p {
+      color: var(--texto-suave);
+      font-size: 17px;
+    }
+
+    .publicos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 55px;
+    }
+
+    .publico {
+      position: relative;
+      padding-top: 25px;
+    }
+
+    .simbolo {
+      width: 76px;
+      height: 76px;
+      border-radius: 48% 52% 58% 42% / 55% 40% 60% 45%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 27px;
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+    }
+
+    .criancas .simbolo {
+      background: var(--amarelo-claro);
+    }
+
+    .adolescentes .simbolo {
+      background: var(--azul-claro);
+    }
+
+    .adultos .simbolo {
+      background: #f4d8d2;
+    }
+
+    .publico h3 {
+      font-size: 27px;
+      margin-bottom: 18px;
+    }
+
+    .publico p {
+      color: var(--texto-suave);
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    .modalidade {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-weight: 600;
+    }
+
+    /* CLÍNICA */
+
+    .clinica {
+      padding: 120px 0;
+      overflow: hidden;
+    }
+
+    .clinica-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .arte-clinica {
+      position: relative;
+      min-height: 430px;
+    }
+
+    .arte-clinica .bloco1 {
+      position: absolute;
+      width: 330px;
+      height: 360px;
+      background: var(--verde);
+      border-radius: 54% 46% 63% 37% / 38% 55% 45% 62%;
+      left: 0;
+      top: 20px;
+    }
+
+    .arte-clinica .bloco2 {
+      position: absolute;
+      width: 230px;
+      height: 220px;
+      background: var(--coral);
+      border-radius: 35% 65% 45% 55% / 58% 42% 58% 42%;
+      right: 0;
+      bottom: 0;
+      opacity: .82;
+    }
+
+    .arte-clinica .frase {
+      position: absolute;
+      z-index: 3;
+      color: white;
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      line-height: 1.3;
+      width: 290px;
+      left: 45px;
+      top: 115px;
+    }
+
+    .clinica-texto h2 {
+      font-size: clamp(40px, 4vw, 58px);
+      margin-bottom: 30px;
+    }
+
+    .clinica-texto p {
+      color: var(--texto-suave);
+      margin-bottom: 19px;
+      font-size: 16px;
+    }
+
+    /* FORMAÇÃO */
+
+    .formacao {
+      background: #f1e9f3;
+      padding: 110px 0;
+    }
+
+    .formacao-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .formacao h2 {
+      font-size: clamp(39px, 4vw, 56px);
+    }
+
+    .formacao-texto p {
+      font-size: 17px;
+      color: #56515a;
+      margin-bottom: 24px;
+    }
+
+    .credenciais {
+      margin-top: 35px;
+      display: grid;
+      gap: 0;
+    }
+
+    .credencial {
+      padding: 18px 0;
+      border-top: 1px solid rgba(0,0,0,.14);
+    }
+
+    .credencial:last-child {
+      border-bottom: 1px solid rgba(0,0,0,.14);
+    }
+
+    /* OUTRAS ATUAÇÕES */
+
+    .outras {
+      padding: 115px 0;
+      background: var(--fundo-claro);
+    }
+
+    .outras h2 {
+      font-size: clamp(39px, 4vw, 56px);
+      margin-bottom: 65px;
+    }
+
+    .lista-atuacoes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .atuacao {
+      padding: 38px 5px;
+      border-top: 3px solid;
+    }
+
+    .atuacao:nth-child(1) {
+      border-color: var(--coral);
+    }
+
+    .atuacao:nth-child(2) {
+      border-color: var(--azul);
+    }
+
+    .atuacao:nth-child(3) {
+      border-color: var(--amarelo);
+    }
+
+    .atuacao h3 {
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    .atuacao p {
+      color: var(--texto-suave);
+      font-size: 15px;
+    }
+
+    /* MODALIDADES */
+
+    .modalidades {
+      padding: 105px 0;
+      background: var(--azul-claro);
+    }
+
+    .modalidades-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .modalidades h2 {
+      font-size: clamp(40px, 4vw, 58px);
+      margin-bottom: 25px;
+    }
+
+    .modalidades p {
+      color: #4f6069;
+      font-size: 17px;
+    }
+
+    .dados-atendimento {
+      display: grid;
+      gap: 20px;
+    }
+
+    .dado {
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(0,0,0,.15);
+    }
+
+    .dado strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      font-weight: 500;
+      margin-bottom: 3px;
+    }
+
+    .dado span {
+      font-size: 14px;
+      color: #52626a;
+    }
+
+    /* CONTATO */
+
+    .contato {
+      background: var(--coral);
+      color: white;
+      padding: 90px 0;
+    }
+
+    .contato-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    .contato h2 {
+      font-size: clamp(40px, 4vw, 57px);
+      margin-bottom: 12px;
+    }
+
+    .contato p {
+      max-width: 650px;
+      opacity: .9;
+    }
+
+    .contato .botao {
+      background: white;
+      color: var(--texto);
+      white-space: nowrap;
+      padding: 17px 28px;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      padding: 55px 0 35px;
+      background: var(--fundo);
+    }
+
+    .rodape {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      align-items: flex-end;
+    }
+
+    .rodape-info {
+      font-size: 13px;
+      color: var(--texto-suave);
+      text-align: right;
+    }
+
+    .copyright {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(0,0,0,.1);
+      font-size: 11px;
+      color: #777;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      nav {
+        min-height: 75px;
+      }
+
+      .menu a:not(.botao-menu) {
+        display: none;
+      }
+
+      .botao-menu {
+        padding: 11px 16px;
+      }
+
+      .hero {
+        display: block;
+        padding-bottom: 0;
+      }
+
+      .hero-conteudo {
+        width: 100%;
+        padding: 75px 0 70px;
+      }
+
+      .hero-foto {
+        position: relative;
+        width: 100%;
+        height: 420px;
+      }
+
+      .hero h1 {
+        font-size: 51px;
+      }
+
+      .forma-1 {
+        right: -140px;
+      }
+
+      .forma-3 {
+        display: none;
+      }
+
+      .publicos,
+      .lista-atuacoes {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .clinica-grid,
+      .formacao-grid,
+      .modalidades-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .arte-clinica {
+        min-height: 380px;
+      }
+
+      .contato-grid,
+      .rodape {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .rodape-info {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .marca strong {
+        font-size: 21px;
+      }
+
+      .marca span {
+        font-size: 8px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .acoes {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .atendimentos,
+      .clinica,
+      .formacao,
+      .outras,
+      .modalidades {
+        padding: 80px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="container">
+    <a href="#inicio" class="marca">
+      <strong>AÍDA ALONSO</strong>
+      <span>Psicóloga Clínica · CRP 05/11191</span>
+    </a>
+
+    <div class="menu">
+      <a href="#atendimentos">Atendimentos</a>
+      <a href="#clinica">Clínica</a>
+      <a href="#formacao">Trajetória</a>
+      <a href="#outras">Outras atuações</a>
+      <a href="#contato" class="botao-menu">Contato</a>
+    </div>
+  </nav>
+</header>
+
+
+<main>
+
+  <section class="hero" id="inicio">
+
+    <div class="forma forma-1"></div>
+    <div class="forma forma-2"></div>
+    <div class="forma forma-3"></div>
+
+    <div class="container">
+      <div class="hero-conteudo">
+
+        <span class="sobretitulo">
+          Psicologia Clínica · Rio de Janeiro
+        </span>
+
+        <h1>
+          Escuta, experiência e presença em diferentes momentos da vida.
+        </h1>
+
+        <p>
+          Atendimento psicológico para crianças, adolescentes e adultos,
+          com uma prática clínica orientada pela psicanálise e atenta
+          à singularidade de cada pessoa.
+        </p>
+
+        <div class="acoes">
+          <a href="#contato" class="botao botao-principal">
+            Entrar em contato
+          </a>
+
+          <a href="#atendimentos" class="botao botao-secundario">
+            Conhecer os atendimentos
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hero-foto">
+      <div class="foto-placeholder">
+        <strong>Foto da Aída</strong><br><br>
+        A fotografia será integrada a esta área na próxima etapa.
+      </div>
+    </div>
+
+  </section>
+
+
+  <section class="atendimentos" id="atendimentos">
+
+    <div class="container">
+
+      <div class="titulo-central">
+        <span class="sobretitulo">Atendimento clínico</span>
+
+        <h2>
+          Diferentes formas de escutar em cada fase da vida.
+        </h2>
+
+        <p>
+          O trabalho clínico acompanha as particularidades de crianças,
+          adolescentes e adultos, respeitando as diferentes formas
+          de expressão de cada momento.
+        </p>
+      </div>
+
+
+      <div class="publicos">
+
+        <article class="publico criancas">
+          <div class="simbolo">○</div>
+
+          <h3>Crianças</h3>
+
+          <p>
+            O trabalho começa com uma entrevista com os responsáveis,
+            buscando compreender a demanda, o desenvolvimento da criança
+            e o contexto em que está inserida.
+          </p>
+
+          <p>
+            Na clínica infantil, brincar também é linguagem. Conversa,
+            desenhos, jogos e movimento podem fazer parte da sessão,
+            respeitando a maneira própria de cada criança se expressar.
+          </p>
+
+          <span class="modalidade">
+            Atendimento presencial
+          </span>
+        </article>
+
+
+        <article class="publico adolescentes">
+          <div class="simbolo">△</div>
+
+          <h3>Adolescentes</h3>
+
+          <p>
+            Um espaço para construir um discurso próprio e expressar
+            questões, dúvidas e experiências sem julgamento.
+          </p>
+
+          <p>
+            O acompanhamento considera as transformações próprias dessa
+            etapa da vida e também a realidade social e cultural em que
+            os adolescentes estão inseridos.
+          </p>
+
+          <span class="modalidade">
+            Presencial ou online
+          </span>
+        </article>
+
+
+        <article class="publico adultos">
+          <div class="simbolo">∞</div>
+
+          <h3>Adultos</h3>
+
+          <p>
+            A partir da questão que leva à procura por ajuda, o trabalho
+            considera a história de cada pessoa e os diferentes contextos
+            de sua vida.
+          </p>
+
+          <p>
+            Uma escuta ativa daquilo que é trazido para a sessão e do que
+            vai se revelando ao longo do processo.
+          </p>
+
+          <span class="modalidade">
+            Presencial ou online
+          </span>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="clinica" id="clinica">
+
+    <div class="container clinica-grid">
+
+      <div class="arte-clinica">
+        <div class="bloco1"></div>
+        <div class="bloco2"></div>
+
+        <div class="frase">
+          Uma clínica atenta às pessoas e às transformações do seu tempo.
+        </div>
+      </div>
+
+
+      <div class="clinica-texto">
+
+        <span class="sobretitulo">Prática clínica</span>
+
+        <h2>
+          A escuta também acompanha as mudanças da sociedade.
+        </h2>
+
+        <p>
+          As questões que chegam à clínica se transformam com o tempo.
+          Mudam as relações, as configurações familiares, o acesso à
+          informação e as formas de viver a infância, a adolescência
+          e a vida adulta.
+        </p>
+
+        <p>
+          Crianças crescem hoje cercadas por novas referências.
+          Adolescentes constroem parte de suas relações e de sua visão
+          de mundo em ambientes também atravessados pela internet.
+          Questões antes consideradas tabus encontram novas possibilidades
+          de expressão.
+        </p>
+
+        <p>
+          Uma prática clínica orientada pela psicanálise e atenta a essas
+          transformações, preservando um espaço em que cada pessoa possa
+          se expressar de forma própria.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="formacao" id="formacao">
+
+    <div class="container formacao-grid">
+
+      <div>
+        <span class="sobretitulo">Formação e trajetória</span>
+
+        <h2>
+          Clínica, formação acadêmica e docência.
+        </h2>
+      </div>
+
+
+      <div class="formacao-texto">
+
+        <p>
+          Uma trajetória construída entre a prática clínica,
+          a formação em Psicologia e a experiência no ensino universitário.
+        </p>
+
+        <div class="credenciais">
+
+          <div class="credencial">
+            Graduação em Psicologia · PUC-Rio
+          </div>
+
+          <div class="credencial">
+            Mestrado em Psicologia Clínica · PUC-Rio
+          </div>
+
+          <div class="credencial">
+            Especialização em Psicanálise · Universidade Santa Úrsula
+          </div>
+
+          <div class="credencial">
+            Experiência docente no IBMR e na Universidade Estácio de Sá
+          </div>
+
+          <div class="credencial">
+            Atuação acadêmica nas áreas de psicoterapia infantil
+            e psicodiagnóstico de crianças e adultos
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="outras" id="outras">
+
+    <div class="container">
+
+      <span class="sobretitulo">Outras atuações</span>
+
+      <h2>
+        Psicologia para além do atendimento individual.
+      </h2>
+
+
+      <div class="lista-atuacoes">
+
+        <article class="atuacao">
+          <h3>Orientação de pais e responsáveis</h3>
+
+          <p>
+            Espaço de escuta e orientação para questões relacionadas
+            à criança ou ao adolescente e às relações familiares.
+          </p>
+        </article>
+
+
+        <article class="atuacao">
+          <h3>Supervisão para psicólogos</h3>
+
+          <p>
+            Supervisão clínica articulando prática, formação em Psicologia
+            Clínica e experiência acadêmica.
+          </p>
+        </article>
+
+
+        <article class="atuacao">
+          <h3>Palestras</h3>
+
+          <p>
+            Participação em palestras, encontros e atividades relacionadas
+            à Psicologia e à prática clínica.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="modalidades">
+
+    <div class="container modalidades-grid">
+
+      <div>
+        <span class="sobretitulo">Modalidades de atendimento</span>
+
+        <h2>
+          Presencial no Rio de Janeiro ou online.
+        </h2>
+
+        <p>
+          O atendimento online possibilita também o acompanhamento
+          de adultos que vivem em outros estados e no exterior.
+        </p>
+      </div>
+
+
+      <div class="dados-atendimento">
+
+        <div class="dado">
+          <strong>Crianças</strong>
+          <span>Atendimento presencial</span>
+        </div>
+
+        <div class="dado">
+          <strong>Adolescentes</strong>
+          <span>Presencial ou online, conforme avaliação</span>
+        </div>
+
+        <div class="dado">
+          <strong>Adultos</strong>
+          <span>Presencial ou online</span>
+        </div>
+
+        <div class="dado">
+          <strong>Consultório</strong>
+          <span>
+            Rua São Salvador, 33, sala 101 · Flamengo · Rio de Janeiro
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="contato" id="contato">
+
+    <div class="container contato-grid">
+
+      <div>
+        <span class="sobretitulo" style="color:white;">
+          Contato
+        </span>
+
+        <h2>
+          Informações sobre atendimento.
+        </h2>
+
+        <p>
+          Para informações ou para marcar uma primeira entrevista,
+          o contato pode ser feito diretamente pelo WhatsApp.
+        </p>
+      </div>
+
+
+      <!-- Depois vamos colocar aqui o número real do WhatsApp -->
+      <a href="#" class="botao">
+        Entrar em contato pelo WhatsApp →
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    <div class="rodape">
+
+      <div class="marca">
+        <strong>AÍDA ALONSO</strong>
+        <span>Psicóloga Clínica · CRP 05/11191</span>
+      </div>
+
+      <div class="rodape-info">
+        Rua São Salvador, 33, sala 101<br>
+        Flamengo · Rio de Janeiro
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © Aída Alonso · Psicóloga Clínica · CRP 05/11191
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
