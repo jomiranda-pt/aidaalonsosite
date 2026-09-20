@@ -70,10 +70,7 @@
     /* CABEÇALHO */
 
     header {
-      position: relative;
-      z-index: 50;
-      background: rgba(255,250,245,.96);
-      border-bottom: 1px solid rgba(0,0,0,.045);
+      display: none;
     }
 
     nav {
@@ -130,171 +127,138 @@
       font-weight: 600;
     }
 
-    /* HERO */
+    /* HERO — imagem-base com links e botões HTML sobrepostos */
 
     .hero {
       position: relative;
-      background: var(--fundo);
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      min-height: 720px;
+      background: #fffaf5 url("siteaidaalonso.png") center top / 100% 100% no-repeat;
       overflow: hidden;
     }
 
     .hero-inner {
-      position: relative;
-      min-height: calc(100vh - 76px);
-      max-height: 790px;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      max-width: none;
+      min-height: 0;
+      height: 100%;
+      margin: 0;
+      display: block;
+    }
+
+    /* O texto já faz parte da arte. Mantemos o conteúdo no HTML por acessibilidade,
+       mas visualmente escondido para não duplicar o que está na imagem. */
+    .hero-conteudo {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .hero-visual,
+    .forma-hero,
+    .foto-moldura {
+      display: none;
+    }
+
+    /* Menu clicável colocado exatamente sobre os nomes que já aparecem na imagem */
+    .hero-links {
+      position: absolute;
+      inset: 0;
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    .hero-link {
+      position: absolute;
+      display: block;
+      height: 5.2%;
+      top: 3.7%;
+      pointer-events: auto;
+      border-radius: 8px;
+    }
+
+    .hero-link:focus-visible {
+      outline: 2px solid var(--coral);
+      outline-offset: 2px;
+    }
+
+    .link-atendimentos { left: 52.1%; width: 8.4%; }
+    .link-clinica      { left: 61.2%; width: 5.0%; }
+    .link-trajetoria   { left: 66.7%; width: 6.5%; }
+    .link-outras       { left: 73.6%; width: 9.4%; }
+
+    /* Botões reais sobre a arte */
+    .hero-contato {
+      position: absolute;
+      z-index: 25;
+      top: 3.15%;
+      left: 85.1%;
+      transform: translateX(-50%);
+      background: var(--coral);
+      color: white;
+      padding: 1.05% 2.35%;
+      border-radius: 999px;
+      font-size: clamp(10px, .92vw, 15px);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      font-weight: 600;
+      white-space: nowrap;
+      box-shadow: 0 5px 16px rgba(80,45,35,.08);
+      transition: transform .2s, filter .2s;
+    }
+
+    .hero-acoes-visiveis {
+      position: absolute;
+      z-index: 25;
+      left: 5.45%;
+      top: 63.1%;
       display: flex;
+      gap: 1.15vw;
       align-items: center;
     }
 
-    .hero-conteudo {
-      position: relative;
-      z-index: 10;
-      width: 52%;
-      padding: 55px 0 65px;
-    }
-
-    .sobretitulo {
-      display: inline-block;
-      text-transform: uppercase;
-      letter-spacing: .22em;
-      font-size: 10px;
-      font-weight: 600;
-      margin-bottom: 19px;
-      color: #686870;
-    }
-
-    .hero h1 {
-      font-size: clamp(45px, 4.25vw, 64px);
-      max-width: 650px;
-      margin-bottom: 23px;
-      letter-spacing: -.015em;
-    }
-
-    .hero p {
-      max-width: 580px;
-      font-size: 16px;
-      color: var(--texto-suave);
-      margin-bottom: 29px;
-      line-height: 1.65;
-    }
-
-    .acoes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .botao {
+    .hero-botao {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 13px 22px;
-      border-radius: 50px;
-      font-size: 11px;
+      min-height: clamp(44px, 4vw, 62px);
+      padding: 0 clamp(22px, 2.15vw, 34px);
+      border-radius: 999px;
+      font-size: clamp(10px, .92vw, 15px);
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: .08em;
-      transition: transform .2s, opacity .2s;
+      letter-spacing: .09em;
+      white-space: nowrap;
+      transition: transform .2s, filter .2s;
     }
 
-    .botao:hover {
-      transform: translateY(-2px);
-    }
-
-    .botao-principal {
+    .hero-botao-principal {
       background: var(--coral);
       color: white;
     }
 
-    .botao-secundario {
-      border: 1px solid #aaa5a0;
-      background: rgba(255,255,255,.45);
+    .hero-botao-secundario {
+      color: var(--texto);
+      background: rgba(255,250,245,.92);
+      border: 1px solid #899097;
     }
 
-    /* FOTO INTEGRADA */
-
-    .hero-visual {
-      position: absolute;
-      z-index: 3;
-      right: -2.5%;
-      bottom: 0;
-      width: 55%;
-      height: 96%;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      isolation: isolate;
+    .hero-contato:hover,
+    .hero-botao:hover {
+      transform: translateY(-2px);
+      filter: brightness(.98);
     }
 
-    .foto-moldura {
-      position: relative;
-      z-index: 5;
-      width: 92%;
-      height: 100%;
-      overflow: visible;
-      border-radius: 0;
-      box-shadow: none;
-    }
-
-    .foto-moldura::after {
-      content: "";
-      position: absolute;
-      z-index: 6;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(to right, var(--fundo) 0%, transparent 15%, transparent 86%, var(--fundo) 100%),
-        linear-gradient(to top, var(--fundo) 0%, transparent 15%);
-    }
-
-    .foto-moldura img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 47%;
-      display: block;
-      border-radius: 0;
-      -webkit-mask-image: radial-gradient(ellipse 76% 88% at 50% 48%, #000 56%, rgba(0,0,0,.92) 72%, transparent 100%);
-      mask-image: radial-gradient(ellipse 76% 88% at 50% 48%, #000 56%, rgba(0,0,0,.92) 72%, transparent 100%);
-    }
-
-    .forma-hero {
-      position: absolute;
-      pointer-events: none;
-    }
-
-    .hero-amarelo {
-      z-index: 1;
-      width: 285px;
-      height: 205px;
-      background: var(--amarelo);
-      border-radius: 62% 38% 53% 47% / 47% 55% 45% 53%;
-      top: 7%;
-      right: 49%;
-      transform: rotate(11deg);
-    }
-
-    .hero-coral {
-      z-index: 2;
-      width: 245px;
-      height: 190px;
-      background: var(--coral-claro);
-      border-radius: 50% 50% 35% 65% / 58% 40% 60% 42%;
-      left: 1%;
-      bottom: 6%;
-      transform: rotate(-7deg);
-    }
-
-    .hero-azul {
-      z-index: 2;
-      width: 180px;
-      height: 145px;
-      background: var(--azul);
-      border-radius: 65% 35% 56% 44% / 45% 62% 38% 55%;
-      right: -12px;
-      bottom: 13%;
-      transform: rotate(14deg);
-      opacity: .92;
+    .hero-contato:hover {
+      transform: translateX(-50%) translateY(-2px);
     }
 
     /* ATENDIMENTOS */
@@ -790,6 +754,41 @@
         padding: 78px 0;
       }
     }
+
+    /* Ajustes da nova capa */
+    @media (max-width: 850px) {
+      .hero {
+        min-height: 0;
+        aspect-ratio: 3 / 2;
+        background-size: 100% 100%;
+      }
+
+      .hero-contato {
+        padding: 1.15% 2.2%;
+      }
+
+      .hero-acoes-visiveis {
+        gap: 1vw;
+      }
+
+      .hero-botao {
+        min-height: 34px;
+        padding: 0 14px;
+        font-size: 8px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      /* Mantém a arte inteira visível. Depois podemos criar uma capa específica para celular. */
+      .hero {
+        min-width: 620px;
+      }
+
+      body {
+        overflow-x: auto;
+      }
+    }
+
   </style>
 </head>
 
@@ -824,56 +823,42 @@
 
 <main>
 
-  <section class="hero" id="inicio">
+  <section class="hero" id="inicio" aria-label="Apresentação de Aída Alonso">
 
-    <div class="container hero-inner">
+    <div class="hero-inner">
 
       <div class="hero-conteudo">
-
-        <span class="sobretitulo">
-          Psicologia Clínica · Rio de Janeiro
-        </span>
-
-        <h1>
-          Escuta, experiência e presença em diferentes momentos da vida.
-        </h1>
-
-        <p>
-          Atendimento psicológico para crianças, adolescentes e adultos,
-          com uma prática clínica orientada pela psicanálise.
-        </p>
-
-        <div class="acoes">
-
-          <a
-            href="https://wa.me/552191041510?text=Ol%C3%A1%2C%20A%C3%ADda.%20Encontrei%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="botao botao-principal">
-            Entrar em contato
-          </a>
-
-          <a href="#atendimentos" class="botao botao-secundario">
-            Conhecer os atendimentos
-          </a>
-
-        </div>
+        <h1>Escuta, experiência e presença em diferentes momentos da vida.</h1>
+        <p>Atendimento psicológico para crianças, adolescentes e adultos, com uma prática clínica orientada pela psicanálise.</p>
       </div>
 
+      <nav class="hero-links" aria-label="Navegação principal">
+        <a class="hero-link link-atendimentos" href="#atendimentos" aria-label="Atendimentos"></a>
+        <a class="hero-link link-clinica" href="#clinica" aria-label="Clínica"></a>
+        <a class="hero-link link-trajetoria" href="#formacao" aria-label="Trajetória"></a>
+        <a class="hero-link link-outras" href="#outras" aria-label="Outras atuações"></a>
+      </nav>
 
-      <div class="hero-visual">
+      <a
+        class="hero-contato"
+        href="https://wa.me/552191041510?text=Ol%C3%A1%2C%20A%C3%ADda.%20Encontrei%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento."
+        target="_blank"
+        rel="noopener noreferrer">
+        Contato
+      </a>
 
-        <div class="forma-hero hero-amarelo"></div>
-        <div class="forma-hero hero-coral"></div>
-        <div class="forma-hero hero-azul"></div>
+      <div class="hero-acoes-visiveis">
+        <a
+          class="hero-botao hero-botao-principal"
+          href="https://wa.me/552191041510?text=Ol%C3%A1%2C%20A%C3%ADda.%20Encontrei%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento."
+          target="_blank"
+          rel="noopener noreferrer">
+          Entrar em contato
+        </a>
 
-        <div class="foto-moldura">
-          <img
-            src="WhatsApp%20Image%202026-09-19%20at%2020.44.17.jpeg"
-            alt="Aída Alonso"
-          >
-        </div>
-
+        <a class="hero-botao hero-botao-secundario" href="#atendimentos">
+          Conhecer os atendimentos
+        </a>
       </div>
 
     </div>
