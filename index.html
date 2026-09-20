@@ -216,31 +216,46 @@
     .hero-visual {
       position: absolute;
       z-index: 3;
-      right: -15px;
+      right: -2.5%;
       bottom: 0;
-      width: 52%;
-      height: 94%;
+      width: 55%;
+      height: 96%;
       display: flex;
       align-items: flex-end;
       justify-content: center;
+      isolation: isolate;
     }
 
     .foto-moldura {
       position: relative;
       z-index: 5;
-      width: 77%;
-      height: 91%;
-      overflow: hidden;
-      border-radius: 48% 48% 7% 7% / 20% 20% 5% 5%;
-      box-shadow: 0 22px 50px rgba(54,45,38,.08);
+      width: 92%;
+      height: 100%;
+      overflow: visible;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .foto-moldura::after {
+      content: "";
+      position: absolute;
+      z-index: 6;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(to right, var(--fundo) 0%, transparent 15%, transparent 86%, var(--fundo) 100%),
+        linear-gradient(to top, var(--fundo) 0%, transparent 15%);
     }
 
     .foto-moldura img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 50% 34%;
+      object-position: 50% 47%;
       display: block;
+      border-radius: 0;
+      -webkit-mask-image: radial-gradient(ellipse 76% 88% at 50% 48%, #000 56%, rgba(0,0,0,.92) 72%, transparent 100%);
+      mask-image: radial-gradient(ellipse 76% 88% at 50% 48%, #000 56%, rgba(0,0,0,.92) 72%, transparent 100%);
     }
 
     .forma-hero {
@@ -250,23 +265,23 @@
 
     .hero-amarelo {
       z-index: 1;
-      width: 300px;
-      height: 220px;
+      width: 285px;
+      height: 205px;
       background: var(--amarelo);
       border-radius: 62% 38% 53% 47% / 47% 55% 45% 53%;
-      top: 8%;
-      right: 53%;
+      top: 7%;
+      right: 49%;
       transform: rotate(11deg);
     }
 
     .hero-coral {
       z-index: 2;
-      width: 235px;
-      height: 205px;
+      width: 245px;
+      height: 190px;
       background: var(--coral-claro);
       border-radius: 50% 50% 35% 65% / 58% 40% 60% 42%;
-      left: 3%;
-      bottom: 2%;
+      left: 1%;
+      bottom: 6%;
       transform: rotate(-7deg);
     }
 
@@ -276,8 +291,8 @@
       height: 145px;
       background: var(--azul);
       border-radius: 65% 35% 56% 44% / 45% 62% 38% 55%;
-      right: -45px;
-      bottom: 11%;
+      right: -12px;
+      bottom: 13%;
       transform: rotate(14deg);
       opacity: .92;
     }
@@ -854,7 +869,7 @@
 
         <div class="foto-moldura">
           <img
-            src="whatsapp%20aida.jpg"
+            src="WhatsApp%20Image%202026-09-19%20at%2020.44.17.jpeg"
             alt="Aída Alonso"
           >
         </div>
