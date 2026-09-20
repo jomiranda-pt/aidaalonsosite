@@ -63,7 +63,7 @@
     }
 
     .container {
-      width: min(90%, var(--largura));
+      width: min(88%, var(--largura));
       margin: 0 auto;
     }
 
@@ -71,13 +71,13 @@
 
     header {
       position: relative;
-      z-index: 20;
-      background: rgba(255, 250, 245, 0.94);
-      border-bottom: 1px solid rgba(0,0,0,.05);
+      z-index: 50;
+      background: rgba(255,250,245,.96);
+      border-bottom: 1px solid rgba(0,0,0,.045);
     }
 
     nav {
-      min-height: 90px;
+      height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -92,23 +92,23 @@
 
     .marca strong {
       font-family: "Playfair Display", serif;
-      font-size: 25px;
+      font-size: 23px;
       letter-spacing: .04em;
       font-weight: 500;
     }
 
     .marca span {
-      font-size: 10px;
+      font-size: 9px;
       text-transform: uppercase;
-      letter-spacing: .28em;
-      margin-top: 8px;
+      letter-spacing: .25em;
+      margin-top: 7px;
     }
 
     .menu {
       display: flex;
       align-items: center;
-      gap: 32px;
-      font-size: 14px;
+      gap: 28px;
+      font-size: 13px;
     }
 
     .menu a:not(.botao-menu) {
@@ -122,9 +122,9 @@
     .botao-menu {
       background: var(--coral);
       color: white;
-      padding: 13px 23px;
+      padding: 11px 20px;
       border-radius: 50px;
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: .08em;
       font-weight: 600;
@@ -134,55 +134,63 @@
 
     .hero {
       position: relative;
-      min-height: 680px;
+      background: var(--fundo);
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      position: relative;
+      min-height: calc(100vh - 76px);
+      max-height: 790px;
       display: flex;
       align-items: center;
-      overflow: hidden;
     }
 
     .hero-conteudo {
       position: relative;
-      z-index: 4;
+      z-index: 10;
       width: 52%;
-      padding: 90px 0 105px;
+      padding: 55px 0 65px;
     }
 
     .sobretitulo {
       display: inline-block;
       text-transform: uppercase;
       letter-spacing: .22em;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 600;
-      margin-bottom: 25px;
+      margin-bottom: 19px;
       color: #686870;
     }
 
     .hero h1 {
-      font-size: clamp(48px, 5.7vw, 78px);
-      max-width: 720px;
-      margin-bottom: 28px;
+      font-size: clamp(45px, 4.25vw, 64px);
+      max-width: 650px;
+      margin-bottom: 23px;
+      letter-spacing: -.015em;
     }
 
     .hero p {
-      max-width: 570px;
-      font-size: 18px;
+      max-width: 580px;
+      font-size: 16px;
       color: var(--texto-suave);
-      margin-bottom: 35px;
+      margin-bottom: 29px;
+      line-height: 1.65;
     }
 
     .acoes {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 12px;
     }
 
     .botao {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 15px 25px;
+      padding: 13px 22px;
       border-radius: 50px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: .08em;
@@ -200,93 +208,101 @@
 
     .botao-secundario {
       border: 1px solid #aaa5a0;
-      background: rgba(255,255,255,.35);
+      background: rgba(255,255,255,.45);
     }
 
-    .hero-foto {
+    /* FOTO INTEGRADA */
+
+    .hero-visual {
       position: absolute;
-      right: 0;
-      top: 0;
-      width: 47%;
-      height: 100%;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,.2)),
-        var(--azul-claro);
+      z-index: 3;
+      right: -15px;
+      bottom: 0;
+      width: 52%;
+      height: 94%;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
     }
 
-    .foto-placeholder {
-      text-align: center;
-      max-width: 280px;
-      color: #60717b;
-      padding: 30px;
-      font-size: 14px;
+    .foto-moldura {
+      position: relative;
+      z-index: 5;
+      width: 77%;
+      height: 91%;
+      overflow: hidden;
+      border-radius: 48% 48% 7% 7% / 20% 20% 5% 5%;
+      box-shadow: 0 22px 50px rgba(54,45,38,.08);
     }
 
-    .forma {
+    .foto-moldura img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 34%;
+      display: block;
+    }
+
+    .forma-hero {
       position: absolute;
-      z-index: 1;
       pointer-events: none;
     }
 
-    .forma-1 {
-      width: 330px;
-      height: 240px;
+    .hero-amarelo {
+      z-index: 1;
+      width: 300px;
+      height: 220px;
       background: var(--amarelo);
-      border-radius: 58% 42% 64% 36% / 45% 60% 40% 55%;
-      right: 32%;
-      top: -100px;
-      transform: rotate(20deg);
-      opacity: .8;
+      border-radius: 62% 38% 53% 47% / 47% 55% 45% 53%;
+      top: 8%;
+      right: 53%;
+      transform: rotate(11deg);
     }
 
-    .forma-2 {
-      width: 270px;
-      height: 200px;
+    .hero-coral {
+      z-index: 2;
+      width: 235px;
+      height: 205px;
       background: var(--coral-claro);
-      border-radius: 63% 37% 38% 62% / 52% 44% 56% 48%;
-      left: -110px;
-      bottom: -105px;
-      transform: rotate(-12deg);
+      border-radius: 50% 50% 35% 65% / 58% 40% 60% 42%;
+      left: 3%;
+      bottom: 2%;
+      transform: rotate(-7deg);
     }
 
-    .forma-3 {
+    .hero-azul {
+      z-index: 2;
       width: 180px;
-      height: 130px;
+      height: 145px;
       background: var(--azul);
-      border-radius: 50% 50% 65% 35% / 60% 40% 60% 40%;
-      left: 39%;
-      bottom: -75px;
-      opacity: .65;
+      border-radius: 65% 35% 56% 44% / 45% 62% 38% 55%;
+      right: -45px;
+      bottom: 11%;
+      transform: rotate(14deg);
+      opacity: .92;
     }
 
     /* ATENDIMENTOS */
 
-    section {
-      position: relative;
-    }
-
     .atendimentos {
-      padding: 115px 0 120px;
+      padding: 105px 0 110px;
       background: var(--fundo-claro);
     }
 
     .titulo-central {
       text-align: center;
       max-width: 760px;
-      margin: 0 auto 75px;
+      margin: 0 auto 65px;
     }
 
     .titulo-central h2 {
-      font-size: clamp(38px, 4vw, 57px);
+      font-size: clamp(37px, 3.8vw, 54px);
       margin-bottom: 18px;
     }
 
     .titulo-central p {
       color: var(--texto-suave);
-      font-size: 17px;
+      font-size: 16px;
     }
 
     .publicos {
@@ -296,20 +312,19 @@
     }
 
     .publico {
-      position: relative;
-      padding-top: 25px;
+      padding-top: 20px;
     }
 
     .simbolo {
-      width: 76px;
-      height: 76px;
+      width: 72px;
+      height: 72px;
       border-radius: 48% 52% 58% 42% / 55% 40% 60% 45%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 27px;
+      margin-bottom: 25px;
       font-family: "Playfair Display", serif;
-      font-size: 27px;
+      font-size: 26px;
     }
 
     .criancas .simbolo {
@@ -326,7 +341,7 @@
 
     .publico h3 {
       font-size: 27px;
-      margin-bottom: 18px;
+      margin-bottom: 17px;
     }
 
     .publico p {
@@ -347,7 +362,7 @@
     /* CLÍNICA */
 
     .clinica {
-      padding: 120px 0;
+      padding: 115px 0;
       overflow: hidden;
     }
 
@@ -365,18 +380,18 @@
 
     .arte-clinica .bloco1 {
       position: absolute;
-      width: 330px;
-      height: 360px;
+      width: 345px;
+      height: 370px;
       background: var(--verde);
       border-radius: 54% 46% 63% 37% / 38% 55% 45% 62%;
       left: 0;
-      top: 20px;
+      top: 15px;
     }
 
     .arte-clinica .bloco2 {
       position: absolute;
-      width: 230px;
-      height: 220px;
+      width: 220px;
+      height: 210px;
       background: var(--coral);
       border-radius: 35% 65% 45% 55% / 58% 42% 58% 42%;
       right: 0;
@@ -389,21 +404,21 @@
       z-index: 3;
       color: white;
       font-family: "Playfair Display", serif;
-      font-size: 30px;
-      line-height: 1.3;
-      width: 290px;
-      left: 45px;
-      top: 115px;
+      font-size: 28px;
+      line-height: 1.34;
+      width: 245px;
+      left: 48px;
+      top: 102px;
     }
 
     .clinica-texto h2 {
-      font-size: clamp(40px, 4vw, 58px);
-      margin-bottom: 30px;
+      font-size: clamp(39px, 3.8vw, 55px);
+      margin-bottom: 28px;
     }
 
     .clinica-texto p {
       color: var(--texto-suave);
-      margin-bottom: 19px;
+      margin-bottom: 18px;
       font-size: 16px;
     }
 
@@ -411,7 +426,7 @@
 
     .formacao {
       background: #f1e9f3;
-      padding: 110px 0;
+      padding: 105px 0;
     }
 
     .formacao-grid {
@@ -422,7 +437,7 @@
     }
 
     .formacao h2 {
-      font-size: clamp(39px, 4vw, 56px);
+      font-size: clamp(38px, 3.8vw, 54px);
     }
 
     .formacao-texto p {
@@ -433,8 +448,6 @@
 
     .credenciais {
       margin-top: 35px;
-      display: grid;
-      gap: 0;
     }
 
     .credencial {
@@ -449,13 +462,13 @@
     /* OUTRAS ATUAÇÕES */
 
     .outras {
-      padding: 115px 0;
+      padding: 105px 0;
       background: var(--fundo-claro);
     }
 
     .outras h2 {
-      font-size: clamp(39px, 4vw, 56px);
-      margin-bottom: 65px;
+      font-size: clamp(38px, 3.8vw, 54px);
+      margin-bottom: 60px;
     }
 
     .lista-atuacoes {
@@ -465,7 +478,7 @@
     }
 
     .atuacao {
-      padding: 38px 5px;
+      padding: 36px 5px;
       border-top: 3px solid;
     }
 
@@ -482,8 +495,8 @@
     }
 
     .atuacao h3 {
-      font-size: 26px;
-      margin-bottom: 18px;
+      font-size: 25px;
+      margin-bottom: 17px;
     }
 
     .atuacao p {
@@ -494,7 +507,7 @@
     /* MODALIDADES */
 
     .modalidades {
-      padding: 105px 0;
+      padding: 100px 0;
       background: var(--azul-claro);
     }
 
@@ -506,8 +519,8 @@
     }
 
     .modalidades h2 {
-      font-size: clamp(40px, 4vw, 58px);
-      margin-bottom: 25px;
+      font-size: clamp(39px, 3.8vw, 55px);
+      margin-bottom: 24px;
     }
 
     .modalidades p {
@@ -543,7 +556,7 @@
     .contato {
       background: var(--coral);
       color: white;
-      padding: 90px 0;
+      padding: 85px 0;
     }
 
     .contato-grid {
@@ -554,26 +567,26 @@
     }
 
     .contato h2 {
-      font-size: clamp(40px, 4vw, 57px);
+      font-size: clamp(39px, 3.8vw, 54px);
       margin-bottom: 12px;
     }
 
     .contato p {
       max-width: 650px;
-      opacity: .9;
+      opacity: .92;
     }
 
     .contato .botao {
       background: white;
       color: var(--texto);
       white-space: nowrap;
-      padding: 17px 28px;
+      padding: 16px 26px;
     }
 
     /* RODAPÉ */
 
     footer {
-      padding: 55px 0 35px;
+      padding: 50px 0 32px;
       background: var(--fundo);
     }
 
@@ -591,18 +604,42 @@
     }
 
     .copyright {
-      margin-top: 40px;
-      padding-top: 20px;
+      margin-top: 38px;
+      padding-top: 19px;
       border-top: 1px solid rgba(0,0,0,.1);
       font-size: 11px;
       color: #777;
+    }
+
+    /* NOTEBOOKS MAIS BAIXOS */
+
+    @media (min-width: 851px) and (max-height: 760px) {
+      .hero-inner {
+        min-height: 660px;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+      }
+
+      .hero-conteudo {
+        padding: 38px 0 45px;
+      }
+
+      .hero-visual {
+        height: 91%;
+      }
+
+      .foto-moldura {
+        height: 88%;
+      }
     }
 
     /* MOBILE */
 
     @media (max-width: 850px) {
       nav {
-        min-height: 75px;
+        height: 72px;
       }
 
       .menu a:not(.botao-menu) {
@@ -610,52 +647,64 @@
       }
 
       .botao-menu {
-        padding: 11px 16px;
+        padding: 10px 15px;
       }
 
-      .hero {
+      .hero-inner {
+        min-height: auto;
+        max-height: none;
         display: block;
-        padding-bottom: 0;
+        padding-top: 55px;
       }
 
       .hero-conteudo {
         width: 100%;
-        padding: 75px 0 70px;
-      }
-
-      .hero-foto {
-        position: relative;
-        width: 100%;
-        height: 420px;
+        padding: 0 0 45px;
       }
 
       .hero h1 {
-        font-size: 51px;
+        font-size: clamp(43px, 12vw, 57px);
+        max-width: 650px;
       }
 
-      .forma-1 {
-        right: -140px;
+      .hero-visual {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        height: 540px;
+        margin-top: 5px;
       }
 
-      .forma-3 {
-        display: none;
+      .foto-moldura {
+        width: 78%;
+        height: 95%;
+      }
+
+      .hero-amarelo {
+        top: 0;
+        right: 59%;
+      }
+
+      .hero-coral {
+        left: 3%;
       }
 
       .publicos,
       .lista-atuacoes {
         grid-template-columns: 1fr;
-        gap: 55px;
+        gap: 50px;
       }
 
       .clinica-grid,
       .formacao-grid,
       .modalidades-grid {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 55px;
       }
 
       .arte-clinica {
-        min-height: 380px;
+        min-height: 400px;
       }
 
       .contato-grid,
@@ -670,8 +719,12 @@
     }
 
     @media (max-width: 520px) {
+      .container {
+        width: 89%;
+      }
+
       .marca strong {
-        font-size: 21px;
+        font-size: 20px;
       }
 
       .marca span {
@@ -683,7 +736,7 @@
       }
 
       .hero p {
-        font-size: 16px;
+        font-size: 15px;
       }
 
       .acoes {
@@ -691,12 +744,35 @@
         align-items: flex-start;
       }
 
+      .hero-visual {
+        height: 450px;
+      }
+
+      .foto-moldura {
+        width: 88%;
+      }
+
+      .hero-amarelo {
+        width: 210px;
+        height: 150px;
+      }
+
+      .hero-coral {
+        width: 180px;
+        height: 155px;
+      }
+
+      .hero-azul {
+        width: 130px;
+        height: 110px;
+      }
+
       .atendimentos,
       .clinica,
       .formacao,
       .outras,
       .modalidades {
-        padding: 80px 0;
+        padding: 78px 0;
       }
     }
   </style>
@@ -706,6 +782,7 @@
 
 <header>
   <nav class="container">
+
     <a href="#inicio" class="marca">
       <strong>AÍDA ALONSO</strong>
       <span>Psicóloga Clínica · CRP 05/11191</span>
@@ -716,8 +793,16 @@
       <a href="#clinica">Clínica</a>
       <a href="#formacao">Trajetória</a>
       <a href="#outras">Outras atuações</a>
-      <a href="#contato" class="botao-menu">Contato</a>
+
+      <a
+        href="https://wa.me/552191041510?text=Ol%C3%A1%2C%20A%C3%ADda.%20Encontrei%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="botao-menu">
+        Contato
+      </a>
     </div>
+
   </nav>
 </header>
 
@@ -726,11 +811,8 @@
 
   <section class="hero" id="inicio">
 
-    <div class="forma forma-1"></div>
-    <div class="forma forma-2"></div>
-    <div class="forma forma-3"></div>
+    <div class="container hero-inner">
 
-    <div class="container">
       <div class="hero-conteudo">
 
         <span class="sobretitulo">
@@ -743,28 +825,42 @@
 
         <p>
           Atendimento psicológico para crianças, adolescentes e adultos,
-          com uma prática clínica orientada pela psicanálise e atenta
-          à singularidade de cada pessoa.
+          com uma prática clínica orientada pela psicanálise.
         </p>
 
         <div class="acoes">
-          <a href="#contato" class="botao botao-principal">
+
+          <a
+            href="https://wa.me/552191041510?text=Ol%C3%A1%2C%20A%C3%ADda.%20Encontrei%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="botao botao-principal">
             Entrar em contato
           </a>
 
           <a href="#atendimentos" class="botao botao-secundario">
             Conhecer os atendimentos
           </a>
+
+        </div>
+      </div>
+
+
+      <div class="hero-visual">
+
+        <div class="forma-hero hero-amarelo"></div>
+        <div class="forma-hero hero-coral"></div>
+        <div class="forma-hero hero-azul"></div>
+
+        <div class="foto-moldura">
+          <img
+            src="whatsapp%20aida.jpg"
+            alt="Aída Alonso"
+          >
         </div>
 
       </div>
-    </div>
 
-    <div class="hero-foto">
-      <div class="foto-placeholder">
-        <strong>Foto da Aída</strong><br><br>
-        A fotografia será integrada a esta área na próxima etapa.
-      </div>
     </div>
 
   </section>
@@ -775,7 +871,10 @@
     <div class="container">
 
       <div class="titulo-central">
-        <span class="sobretitulo">Atendimento clínico</span>
+
+        <span class="sobretitulo">
+          Atendimento clínico
+        </span>
 
         <h2>
           Diferentes formas de escutar em cada fase da vida.
@@ -786,12 +885,14 @@
           adolescentes e adultos, respeitando as diferentes formas
           de expressão de cada momento.
         </p>
+
       </div>
 
 
       <div class="publicos">
 
         <article class="publico criancas">
+
           <div class="simbolo">○</div>
 
           <h3>Crianças</h3>
@@ -811,10 +912,12 @@
           <span class="modalidade">
             Atendimento presencial
           </span>
+
         </article>
 
 
         <article class="publico adolescentes">
+
           <div class="simbolo">△</div>
 
           <h3>Adolescentes</h3>
@@ -833,10 +936,12 @@
           <span class="modalidade">
             Presencial ou online
           </span>
+
         </article>
 
 
         <article class="publico adultos">
+
           <div class="simbolo">∞</div>
 
           <h3>Adultos</h3>
@@ -855,6 +960,7 @@
           <span class="modalidade">
             Presencial ou online
           </span>
+
         </article>
 
       </div>
@@ -869,18 +975,22 @@
     <div class="container clinica-grid">
 
       <div class="arte-clinica">
+
         <div class="bloco1"></div>
         <div class="bloco2"></div>
 
         <div class="frase">
           Uma clínica atenta às pessoas e às transformações do seu tempo.
         </div>
+
       </div>
 
 
       <div class="clinica-texto">
 
-        <span class="sobretitulo">Prática clínica</span>
+        <span class="sobretitulo">
+          Prática clínica
+        </span>
 
         <h2>
           A escuta também acompanha as mudanças da sociedade.
@@ -919,20 +1029,25 @@
     <div class="container formacao-grid">
 
       <div>
-        <span class="sobretitulo">Formação e trajetória</span>
+
+        <span class="sobretitulo">
+          Formação e trajetória
+        </span>
 
         <h2>
-          Clínica, formação acadêmica e docência.
+          Formação, prática clínica e docência.
         </h2>
+
       </div>
 
 
       <div class="formacao-texto">
 
         <p>
-          Uma trajetória construída entre a prática clínica,
-          a formação em Psicologia e a experiência no ensino universitário.
+          Uma trajetória construída entre a formação em Psicologia,
+          a prática clínica e a experiência no ensino universitário.
         </p>
+
 
         <div class="credenciais">
 
@@ -970,7 +1085,9 @@
 
     <div class="container">
 
-      <span class="sobretitulo">Outras atuações</span>
+      <span class="sobretitulo">
+        Outras atuações
+      </span>
 
       <h2>
         Psicologia para além do atendimento individual.
@@ -980,32 +1097,44 @@
       <div class="lista-atuacoes">
 
         <article class="atuacao">
-          <h3>Orientação de pais e responsáveis</h3>
+
+          <h3>
+            Orientação de pais e responsáveis
+          </h3>
 
           <p>
             Espaço de escuta e orientação para questões relacionadas
             à criança ou ao adolescente e às relações familiares.
           </p>
+
         </article>
 
 
         <article class="atuacao">
-          <h3>Supervisão para psicólogos</h3>
+
+          <h3>
+            Supervisão para psicólogos
+          </h3>
 
           <p>
-            Supervisão clínica articulando prática, formação em Psicologia
-            Clínica e experiência acadêmica.
+            A supervisão auxilia a prática clínica, complementando
+            a formação em Psicologia.
           </p>
+
         </article>
 
 
         <article class="atuacao">
-          <h3>Palestras</h3>
+
+          <h3>
+            Palestras
+          </h3>
 
           <p>
             Participação em palestras, encontros e atividades relacionadas
             à Psicologia e à prática clínica.
           </p>
+
         </article>
 
       </div>
@@ -1020,7 +1149,10 @@
     <div class="container modalidades-grid">
 
       <div>
-        <span class="sobretitulo">Modalidades de atendimento</span>
+
+        <span class="sobretitulo">
+          Modalidades de atendimento
+        </span>
 
         <h2>
           Presencial no Rio de Janeiro ou online.
@@ -1030,6 +1162,7 @@
           O atendimento online possibilita também o acompanhamento
           de adultos que vivem em outros estados e no exterior.
         </p>
+
       </div>
 
 
@@ -1069,6 +1202,7 @@
     <div class="container contato-grid">
 
       <div>
+
         <span class="sobretitulo" style="color:white;">
           Contato
         </span>
@@ -1081,11 +1215,15 @@
           Para informações ou para marcar uma primeira entrevista,
           o contato pode ser feito diretamente pelo WhatsApp.
         </p>
+
       </div>
 
 
-      <!-- Depois vamos colocar aqui o número real do WhatsApp -->
-      <a href="#" class="botao">
+      <a
+        href="https://wa.me/552191041510?text=Ol%C3%A1%2C%20A%C3%ADda.%20Encontrei%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="botao">
         Entrar em contato pelo WhatsApp →
       </a>
 
